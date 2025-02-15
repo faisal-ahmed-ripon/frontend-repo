@@ -1283,13 +1283,14 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
         orderDate: new Date()
     };
 
-    fetch('http://localhost:5000/api/orders', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(orderData)
-    })
+    fetch("https://backend-repo-1-kgcn.onrender.com/api/orders", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(orderData)
+});
+
     .then(response => response.json())
     .then(data => {
         if (data.success) {
