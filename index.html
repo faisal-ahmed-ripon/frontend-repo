@@ -1981,13 +1981,14 @@ function submitOrder() {
         orderDate: new Date()
     };
 
-    fetch('http://localhost:5000/api/orders', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(orderData)
+    fetch("https://backend-repo.onrender.com/api/orders")
+    .then(response => response.json())
+    .then(data => {
+        console.log("✅ Orders Loaded:", data);
+        // এখানে data দিয়ে Dashboard-এ দেখানোর কাজ করো
     })
+    .catch(error => console.error("❌ Error loading orders:", error));
+
     .then(response => response.json())
     .then(data => {
         if (data.success) {
