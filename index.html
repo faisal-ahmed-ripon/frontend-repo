@@ -1256,6 +1256,16 @@ html {
     </main>
 
     <script>
+
+const customerNameInput = document.getElementById('customerName');
+if (customerNameInput) {
+    customerNameInput.value = '';
+} else {
+    console.warn("⚠️ Warning: #customerName not found in the DOM!");
+}
+
+ 
+
         // Add event listener for form submission
 document.getElementById('orderForm').addEventListener('submit', async function(event) {
     event.preventDefault();
